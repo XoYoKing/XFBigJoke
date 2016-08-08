@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"段子趣图来相会";
     
     self.view.backgroundColor = XFRandomColor;
 }

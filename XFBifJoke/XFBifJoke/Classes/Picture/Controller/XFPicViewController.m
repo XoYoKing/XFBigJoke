@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"趣图满天飞";
     
     self.view.backgroundColor = XFRandomColor;
 }

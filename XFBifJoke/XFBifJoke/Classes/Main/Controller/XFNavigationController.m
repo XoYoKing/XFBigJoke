@@ -18,6 +18,9 @@
     [super viewDidLoad];
     
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+    
+    [self.navigationBar setBarTintColor:[UIColor orangeColor]];
+    
 }
 
 
