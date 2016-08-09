@@ -6,8 +6,8 @@
 //  Copyright © 2016年 xiaofan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "XFDataViewController.h"
 
-@interface XFPicViewController : UITableViewController
+@interface XFPicViewController : XFDataViewController
 
 @end

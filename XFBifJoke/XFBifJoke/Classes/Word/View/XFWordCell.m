@@ -7,7 +7,6 @@
 //
 
 #import "XFWordCell.h"
-#import "XFWordModel.h"
 
 
 @interface XFWordCell ()
@@ -17,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *zanButton;
 @property (weak, nonatomic) IBOutlet UIButton *caiButton;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet UIImageView *gifView;
 
 @end
 
@@ -28,10 +29,16 @@
     self.backgroundColor = [UIColor whiteColor];
 }
 
-- (void)setModel:(XFWordModel *)model {
+- (void)setModel:(XFDataModel *)model {
     _model = model;
+    
     self.timeLabel.text = model.updatetime;
     self.contentLabel.text = model.content;
+    
+    if (model.url.length) {
+        self.imgView.hidden = NO;
+        [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.url]];
+    }
     
 }
 

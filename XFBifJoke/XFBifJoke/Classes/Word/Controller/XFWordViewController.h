@@ -6,8 +6,8 @@
 //  Copyright © 2016年 xiaofan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "XFDataViewController.h"
 
-@interface XFWordViewController : UITableViewController
+@interface XFWordViewController : XFDataViewController
 
 @end

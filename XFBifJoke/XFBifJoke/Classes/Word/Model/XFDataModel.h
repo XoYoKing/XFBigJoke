@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface XFWordModel : NSObject
+@interface XFDataModel : NSObject
 
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSString *updatetime;
+@property (nonatomic, copy) NSString *url;
 @property (nonatomic, assign) NSNumber *unixtime;
 
 /** cell 高度 */

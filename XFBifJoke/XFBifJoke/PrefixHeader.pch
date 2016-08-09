@@ -15,6 +15,13 @@
 /*** 公用头文件 ***/
 #import <MJExtension.h>
 #import "XFAlert.h"
+#import "XFRefreshHeader.h"
+#import "XFRefreshFooter.h"
+#import "XFHttpManager.h"
+#import "XFDataModel.h"
+#import "XFWordCell.h"
+#import <UIImageView+WebCache.h>
+#import "UIView+XFExtension.h"
 
 
 
@@ -29,7 +36,7 @@
 // 段子
 #define kURL_Word @"http://japi.juhe.cn/joke/content/text.from?key=020b370e51f43081dec8716846562b4d"
 // 趣图
-#define kURL_Pic @""
+#define kURL_Pic @"http://japi.juhe.cn/joke/img/text.from?key=020b370e51f43081dec8716846562b4d"
 
 /*** 日志 ***/
 #ifdef DEBUG

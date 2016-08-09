@@ -1,5 +1,5 @@
 //
-//  XFWordCell.h
+//  XFDataViewController.h
 //  XFBifJoke
 //
 //  Created by xiaofans on 16/8/9.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class XFDataModel;
+@interface XFDataViewController : UITableViewController
 
-@interface XFWordCell : UITableViewCell
-
-@property (nonatomic, strong) XFDataModel *model;
+@property (nonatomic, copy) NSString *url;
 
 @end

@@ -11,12 +11,14 @@
 		97304B3C6540C7C73C8A3DB5 /* libPods-XFBifJokeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9CCFD7416D6AA2479E4446 /* libPods-XFBifJokeUITests.a */; };
 		B0FFD0F0F712C12602D15A48 /* libPods-XFBifJokeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC2DC3DCF1499E5ED844B02 /* libPods-XFBifJokeTests.a */; };
 		BD60B0AE1D5970590089939C /* XFHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0AD1D5970590089939C /* XFHttpManager.m */; };
-		BD60B0B21D5985F30089939C /* XFWordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0B11D5985F30089939C /* XFWordModel.m */; };
+		BD60B0B21D5985F30089939C /* XFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0B11D5985F30089939C /* XFDataModel.m */; };
 		BD60B0B61D5989890089939C /* XFWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0B41D5989890089939C /* XFWordCell.m */; };
 		BD60B0B71D5989890089939C /* XFWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD60B0B51D5989890089939C /* XFWordCell.xib */; };
 		BD60B0BA1D59A9C50089939C /* XFAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0B91D59A9C50089939C /* XFAlert.m */; };
 		BD60B0BF1D59AF620089939C /* XFRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0BC1D59AF620089939C /* XFRefreshFooter.m */; };
 		BD60B0C01D59AF620089939C /* XFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0BE1D59AF620089939C /* XFRefreshHeader.m */; };
+		BD60B0DC1D59D0750089939C /* UIView+XFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0DB1D59D0750089939C /* UIView+XFExtension.m */; };
+		BD60B0DF1D59D3950089939C /* XFDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0DE1D59D3950089939C /* XFDataViewController.m */; };
 		BDB04CB61D58C1CD00212CC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB04CB51D58C1CD00212CC2 /* main.m */; };
 		BDB04CB91D58C1CD00212CC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB04CB81D58C1CD00212CC2 /* AppDelegate.m */; };
 		BDB04CC11D58C1CD00212CC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB04CC01D58C1CD00212CC2 /* Assets.xcassets */; };
@@ -55,8 +57,8 @@
 		BD60B0AC1D5970590089939C /* XFHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFHttpManager.h; sourceTree = "<group>"; };
 		BD60B0AD1D5970590089939C /* XFHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFHttpManager.m; sourceTree = "<group>"; };
 		BD60B0AF1D5971590089939C /* XFSingle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFSingle.h; sourceTree = "<group>"; };
-		BD60B0B01D5985F30089939C /* XFWordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFWordModel.h; sourceTree = "<group>"; };
-		BD60B0B11D5985F30089939C /* XFWordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFWordModel.m; sourceTree = "<group>"; };
+		BD60B0B01D5985F30089939C /* XFDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFDataModel.h; sourceTree = "<group>"; };
+		BD60B0B11D5985F30089939C /* XFDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFDataModel.m; sourceTree = "<group>"; };
 		BD60B0B31D5989890089939C /* XFWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFWordCell.h; sourceTree = "<group>"; };
 		BD60B0B41D5989890089939C /* XFWordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFWordCell.m; sourceTree = "<group>"; };
 		BD60B0B51D5989890089939C /* XFWordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFWordCell.xib; sourceTree = "<group>"; };
@@ -66,6 +68,10 @@
 		BD60B0BC1D59AF620089939C /* XFRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFRefreshFooter.m; sourceTree = "<group>"; };
 		BD60B0BD1D59AF620089939C /* XFRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFRefreshHeader.h; sourceTree = "<group>"; };
 		BD60B0BE1D59AF620089939C /* XFRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFRefreshHeader.m; sourceTree = "<group>"; };
+		BD60B0DA1D59D0750089939C /* UIView+XFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XFExtension.h"; sourceTree = "<group>"; };
+		BD60B0DB1D59D0750089939C /* UIView+XFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XFExtension.m"; sourceTree = "<group>"; };
+		BD60B0DD1D59D3950089939C /* XFDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFDataViewController.h; sourceTree = "<group>"; };
+		BD60B0DE1D59D3950089939C /* XFDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFDataViewController.m; sourceTree = "<group>"; };
 		BDB04CB11D58C1CD00212CC2 /* XFBifJoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XFBifJoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB04CB51D58C1CD00212CC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BDB04CB71D58C1CD00212CC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -267,8 +273,8 @@
 		BDB04CEB1D58C33000212CC2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BD60B0B01D5985F30089939C /* XFWordModel.h */,
-				BD60B0B11D5985F30089939C /* XFWordModel.m */,
+				BD60B0B01D5985F30089939C /* XFDataModel.h */,
+				BD60B0B11D5985F30089939C /* XFDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,6 +360,8 @@
 		BDB04CF51D58C3C700212CC2 /* Catagery */ = {
 			isa = PBXGroup;
 			children = (
+				BD60B0DA1D59D0750089939C /* UIView+XFExtension.h */,
+				BD60B0DB1D59D0750089939C /* UIView+XFExtension.m */,
 			);
 			path = Catagery;
 			sourceTree = "<group>";
@@ -365,6 +373,8 @@
 				BDB04CFA1D58C3EA00212CC2 /* XFMainViewController.m */,
 				BDB04CFD1D58D4DE00212CC2 /* XFNavigationController.h */,
 				BDB04CFE1D58D4DE00212CC2 /* XFNavigationController.m */,
+				BD60B0DD1D59D3950089939C /* XFDataViewController.h */,
+				BD60B0DE1D59D3950089939C /* XFDataViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -664,7 +674,7 @@
 				BDB04CB91D58C1CD00212CC2 /* AppDelegate.m in Sources */,
 				BDB04CFB1D58C3EA00212CC2 /* XFMainViewController.m in Sources */,
 				BD60B0AE1D5970590089939C /* XFHttpManager.m in Sources */,
-				BD60B0B21D5985F30089939C /* XFWordModel.m in Sources */,
+				BD60B0B21D5985F30089939C /* XFDataModel.m in Sources */,
 				BDB04CB61D58C1CD00212CC2 /* main.m in Sources */,
 				BDB04D0B1D58D6B100212CC2 /* XFPicViewController.m in Sources */,
 				BD60B0B61D5989890089939C /* XFWordCell.m in Sources */,
@@ -672,7 +682,9 @@
 				BD60B0C01D59AF620089939C /* XFRefreshHeader.m in Sources */,
 				BD60B0BA1D59A9C50089939C /* XFAlert.m in Sources */,
 				BDB04D081D58D6A600212CC2 /* XFWordViewController.m in Sources */,
+				BD60B0DF1D59D3950089939C /* XFDataViewController.m in Sources */,
 				BDB04CFF1D58D4DE00212CC2 /* XFNavigationController.m in Sources */,
+				BD60B0DC1D59D0750089939C /* UIView+XFExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

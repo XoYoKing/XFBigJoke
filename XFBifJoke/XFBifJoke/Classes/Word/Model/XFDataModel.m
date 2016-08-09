@@ -6,9 +6,9 @@
 //  Copyright © 2016年 xiaofan. All rights reserved.
 //
 
-#import "XFWordModel.h"
+#import "XFDataModel.h"
 
-@implementation XFWordModel
+@implementation XFDataModel
 
 - (CGFloat)cellHeight {
     // 如果已经计算好 cell 高度，就直接返回
@@ -18,7 +18,12 @@
     CGFloat textMaxW = SCREEN.width - 2 * 10;
     CGSize textMaxSize = CGSizeMake(textMaxW, MAXFLOAT);
     CGSize textSize = [self.content boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} context:nil].size;
-    _cellHeight = textSize.height;
+    _cellHeight = textSize.height + 10;
+    
+    // 图片
+    if (self.url.length) {
+        _cellHeight += SCREEN.width;
+    }
     
     // 时间
     _cellHeight += 40;
