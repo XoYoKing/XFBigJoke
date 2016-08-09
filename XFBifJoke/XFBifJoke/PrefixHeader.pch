@@ -13,18 +13,23 @@
 #ifdef __OBJC__
 
 /*** 公用头文件 ***/
-
+#import <MJExtension.h>
+#import "XFAlert.h"
 
 
 
 /*** 当前系统版本判断 ***/
 //#define iOS(version) ([UIDevice currentDevice].systemVersion.doubleValue >= (version))
 
-/*** 屏幕尺寸判断 ***/
-//#define CurrentIPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
-//#define CurrentIPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
-//#define CurrentIPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
-//#define CurrentIPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+/*** 屏幕 size ***/
+#define SCREEN [UIScreen mainScreen].bounds.size
+
+
+/*** 数据 url ***/
+// 段子
+#define kURL_Word @"http://japi.juhe.cn/joke/content/text.from?key=020b370e51f43081dec8716846562b4d"
+// 趣图
+#define kURL_Pic @""
 
 /*** 日志 ***/
 #ifdef DEBUG
@@ -36,7 +41,7 @@
 #define XFLogFunc XFLog(@"%s", __func__);
 
 /*** 将服务器返回的数据写入plist ***/
-#define XFWriteToPlist(data, filename) [data writeToFile:[NSString stringWithFormat:@"文件路径/%@.plist", filename] atomically:YES];
+#define XFWriteToPlist(data, filename) [data writeToFile:[NSString stringWithFormat:@"/Users/zhyks/Desktop/YK/个人/项目/笑话项目/%@.plist", filename] atomically:YES];
 
 /*** 颜色 ***/
 #define XFColorA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]

@@ -7,89 +7,161 @@
 //
 
 #import "XFWordViewController.h"
+#import "XFHttpManager.h"
+#import <AFNetworking.h>
+#import "XFWordModel.h"
+#import "XFWordCell.h"
+#import "XFRefreshHeader.h"
+#import "XFRefreshFooter.h"
 
 @interface XFWordViewController ()
 
+@property (nonatomic, strong) XFHttpManager *httpManager;
+@property (nonatomic, strong) NSMutableArray <XFWordModel *>*wordModelArray;
+
+@property (nonatomic, assign) NSInteger page;
+
 @end
 
+static NSString * const XFWordCellID = @"XFWordCell";
+static NSInteger const pageSize = 15;
+
 @implementation XFWordViewController
+
+#pragma mark - 懒加载
+
+- (XFHttpManager *)httpManager {
+    if (!_httpManager) {
+        _httpManager = [[XFHttpManager alloc] init];
+        _httpManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    }
+    return _httpManager;
+}
+
+- (NSInteger)page {
+    if (!_page) {
+        _page = 1;
+    }
+    return _page;
+}
+
+
+#pragma mark - 初始化
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"段子一箩筐";
+    [self setupView];
     
-    self.view.backgroundColor = XFRandomColor;
+    [self setupRefresh];
+    
+    //[self loadData];
+}
+
+- (void)setupView {
+    self.navigationItem.title = @"段子一箩筐";
+    self.view.backgroundColor = XFBaseBgColor;
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XFWordCell class]) bundle:nil] forCellReuseIdentifier:XFWordCellID];
+    
+}
+
+- (void)setupRefresh {
+    self.tableView.mj_header = [XFRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    [self.tableView.mj_header beginRefreshing];
+    
+    self.tableView.mj_footer = [XFRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+}
+
+#pragma mark - 加载数据
+- (void)loadNewData {
+    
+    NSString *url = [NSString stringWithFormat:@"%@&page=%ld&pagesize=%ld", kURL_Word, (long)self.page, pageSize];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [self.httpManager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        weakSelf.wordModelArray = [XFWordModel mj_objectArrayWithKeyValuesArray:responseObject[@"result"][@"data"]];
+        
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_header endRefreshing];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        XFLog(@"error:%@", error);
+        [weakSelf.tableView.mj_header endRefreshing];
+    }];
+    
+}
+
+- (void)loadMoreData {
+    
+    self.page++;
+    
+    NSString *url = [NSString stringWithFormat:@"%@&page=%ld&pagesize=%ld", kURL_Word, (long)self.page, pageSize];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [self.httpManager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSArray *moreArray = [XFWordModel mj_objectArrayWithKeyValuesArray:responseObject[@"result"][@"data"]];
+        [weakSelf.wordModelArray addObjectsFromArray:moreArray];
+        
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_footer endRefreshing];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        XFLog(@"error:%@", error);
+        [weakSelf.tableView.mj_footer endRefreshing];
+    }];
+    
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.wordModelArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellID = @"cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    }
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %zd", [self class], indexPath.row];
+    XFWordCell *cell = [tableView dequeueReusableCellWithIdentifier:XFWordCellID];
+    cell.model = self.wordModelArray[indexPath.row];
+    //cell.userInteractionEnabled = NO;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return self.wordModelArray[indexPath.row].cellHeight;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+#pragma mark - UITableView delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    XFLogFunc
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    return  nil;
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
