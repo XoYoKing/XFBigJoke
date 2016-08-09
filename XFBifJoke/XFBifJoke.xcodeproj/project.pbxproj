@@ -19,7 +19,6 @@
 		BD60B0C01D59AF620089939C /* XFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0BE1D59AF620089939C /* XFRefreshHeader.m */; };
 		BD60B0DC1D59D0750089939C /* UIView+XFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0DB1D59D0750089939C /* UIView+XFExtension.m */; };
 		BD60B0DF1D59D3950089939C /* XFDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0DE1D59D3950089939C /* XFDataViewController.m */; };
-		BD60B0E21D59D7670089939C /* XFRandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0E11D59D7670089939C /* XFRandViewController.m */; };
 		BDB04CB61D58C1CD00212CC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB04CB51D58C1CD00212CC2 /* main.m */; };
 		BDB04CB91D58C1CD00212CC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB04CB81D58C1CD00212CC2 /* AppDelegate.m */; };
 		BDB04CC11D58C1CD00212CC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB04CC01D58C1CD00212CC2 /* Assets.xcassets */; };
@@ -72,8 +71,6 @@
 		BD60B0DB1D59D0750089939C /* UIView+XFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XFExtension.m"; sourceTree = "<group>"; };
 		BD60B0DD1D59D3950089939C /* XFDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFDataViewController.h; sourceTree = "<group>"; };
 		BD60B0DE1D59D3950089939C /* XFDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFDataViewController.m; sourceTree = "<group>"; };
-		BD60B0E01D59D7670089939C /* XFRandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFRandViewController.h; sourceTree = "<group>"; };
-		BD60B0E11D59D7670089939C /* XFRandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFRandViewController.m; sourceTree = "<group>"; };
 		BDB04CB11D58C1CD00212CC2 /* XFBifJoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XFBifJoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB04CB51D58C1CD00212CC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BDB04CB71D58C1CD00212CC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -236,7 +233,6 @@
 				BDB04CF41D58C3C700212CC2 /* Main */,
 				BDB04CE81D58C2FB00212CC2 /* Word */,
 				BDB04CEC1D58C37200212CC2 /* Picture */,
-				BDB04CF01D58C37200212CC2 /* Random */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -306,39 +302,6 @@
 			sourceTree = "<group>";
 		};
 		BDB04CEF1D58C37200212CC2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BDB04CF01D58C37200212CC2 /* Random */ = {
-			isa = PBXGroup;
-			children = (
-				BDB04CF11D58C37200212CC2 /* Controller */,
-				BDB04CF21D58C37200212CC2 /* Model */,
-				BDB04CF31D58C37200212CC2 /* View */,
-			);
-			path = Random;
-			sourceTree = "<group>";
-		};
-		BDB04CF11D58C37200212CC2 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				BD60B0E01D59D7670089939C /* XFRandViewController.h */,
-				BD60B0E11D59D7670089939C /* XFRandViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		BDB04CF21D58C37200212CC2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BDB04CF31D58C37200212CC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -675,7 +638,6 @@
 				BD60B0AE1D5970590089939C /* XFHttpManager.m in Sources */,
 				BD60B0B21D5985F30089939C /* XFDataModel.m in Sources */,
 				BDB04CB61D58C1CD00212CC2 /* main.m in Sources */,
-				BD60B0E21D59D7670089939C /* XFRandViewController.m in Sources */,
 				BDB04D0B1D58D6B100212CC2 /* XFPicViewController.m in Sources */,
 				BD60B0B61D5989890089939C /* XFWordCell.m in Sources */,
 				BD60B0BF1D59AF620089939C /* XFRefreshFooter.m in Sources */,

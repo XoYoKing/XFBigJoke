@@ -9,7 +9,6 @@
 #import "XFMainViewController.h"
 #import "XFWordViewController.h"
 #import "XFPicViewController.h"
-#import "XFRandViewController.h"
 #import "XFNavigationController.h"
 
 @interface XFMainViewController ()
@@ -36,8 +35,6 @@
     [self setupOneChildViewController:[[XFNavigationController alloc] initWithRootViewController:[[XFWordViewController alloc] init]] title:@"看笑话" image:@"tabbar_word_normal"];
     
     [self setupOneChildViewController:[[XFNavigationController alloc] initWithRootViewController:[[XFPicViewController alloc] init]] title:@"赏趣图" image:@"tabbar_pic_normal"];
-    
-    [self setupOneChildViewController:[[XFNavigationController alloc] initWithRootViewController:[[XFRandViewController alloc] init]] title:@"大杂烩" image:@"tabbar_random_normal"];
 }
 
 /**
