@@ -2,7 +2,7 @@
 //  XFRandViewController.m
 //  XFBifJoke
 //
-//  Created by xiaofans on 16/8/8.
+//  Created by xiaofans on 16/8/9.
 //  Copyright © 2016年 xiaofan. All rights reserved.
 //
 
@@ -10,85 +10,108 @@
 
 @interface XFRandViewController ()
 
+@property (nonatomic, strong) XFHttpManager *httpManager;
+@property (nonatomic, strong) NSMutableArray <XFDataModel *>*wordModelArray;
+
+@property (nonatomic, assign) NSInteger page;
+
 @end
 
+static NSString * const XFWordCellID = @"XFWordCell";
+static NSInteger const pageSize = 15;
+
 @implementation XFRandViewController
+
+#pragma mark - 懒加载
+
+- (XFHttpManager *)httpManager {
+    if (!_httpManager) {
+        _httpManager = [[XFHttpManager alloc] init];
+        _httpManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    }
+    return _httpManager;
+}
+
+- (NSInteger)page {
+    if (!_page) {
+        _page = 1;
+    }
+    return _page;
+}
+
+
+#pragma mark - 初始化
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"段子趣图来相会";
+    [self setupView];
     
-    self.view.backgroundColor = XFRandomColor;
+    [self setupRefresh];
+    
+    //[self loadData];
+}
+
+- (void)setupView {
+    self.navigationItem.title = @"随机笑话";
+    self.view.backgroundColor = XFBaseBgColor;
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XFWordCell class]) bundle:nil] forCellReuseIdentifier:XFWordCellID];
+    
+}
+
+- (void)setupRefresh {
+    self.tableView.mj_header = [XFRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    [self.tableView.mj_header beginRefreshing];
+}
+
+#pragma mark - 加载数据
+- (void)loadNewData {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    NSString *url = [NSString stringWithFormat:@"%@", kURL_Rand];
+    
+    [self.httpManager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        weakSelf.wordModelArray = [XFDataModel mj_objectArrayWithKeyValuesArray:responseObject[@"result"]];
+        
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_header endRefreshing];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        XFLog(@"error:%@", error);
+        [weakSelf.tableView.mj_header endRefreshing];
+    }];
+    
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.wordModelArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellID = @"cell";
+    XFWordCell *cell = [tableView dequeueReusableCellWithIdentifier:XFWordCellID];
+    cell.model = self.wordModelArray[indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    }
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %zd", [self class], indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return self.wordModelArray[indexPath.row].cellHeight;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+#pragma mark - UITableView delegate
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    return  nil;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

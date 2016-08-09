@@ -26,7 +26,7 @@ static NSInteger const pageSize = 15;
 - (XFHttpManager *)httpManager {
     if (!_httpManager) {
         _httpManager = [[XFHttpManager alloc] init];
-        _httpManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+        _httpManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", nil];
     }
     return _httpManager;
 }

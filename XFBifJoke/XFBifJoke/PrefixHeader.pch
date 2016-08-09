@@ -37,6 +37,8 @@
 #define kURL_Word @"http://japi.juhe.cn/joke/content/text.from?key=020b370e51f43081dec8716846562b4d"
 // 趣图
 #define kURL_Pic @"http://japi.juhe.cn/joke/img/text.from?key=020b370e51f43081dec8716846562b4d"
+// 随机
+#define kURL_Rand @"http://v.juhe.cn/joke/randJoke.php?key=020b370e51f43081dec8716846562b4d"
 
 /*** 日志 ***/
 #ifdef DEBUG

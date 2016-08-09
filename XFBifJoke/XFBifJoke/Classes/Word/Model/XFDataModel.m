@@ -26,7 +26,9 @@
     }
     
     // 时间
-    _cellHeight += 40;
+    if (self.updatetime.length) {
+        _cellHeight += 40;
+    }
     
     // 底部工具条
     _cellHeight += 85;

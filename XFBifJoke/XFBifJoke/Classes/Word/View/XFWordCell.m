@@ -32,8 +32,11 @@
 - (void)setModel:(XFDataModel *)model {
     _model = model;
     
-    self.timeLabel.text = model.updatetime;
     self.contentLabel.text = model.content;
+    
+    if (model.updatetime.length) {
+        self.timeLabel.text = model.updatetime;
+    }
     
     if (model.url.length) {
         self.imgView.hidden = NO;
