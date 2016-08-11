@@ -126,8 +126,10 @@ static NSInteger const pageSize = 15;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XFWordCell *cell = [tableView dequeueReusableCellWithIdentifier:XFWordCellID];
     cell.model = self.wordModelArray[indexPath.row];
-    //cell.userInteractionEnabled = NO;
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    //[cell.seeBigBtn addTarget:self action:@selector(seeBigBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -140,6 +142,14 @@ static NSInteger const pageSize = 15;
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     return  nil;
+}
+
+- (void)seeBigBtnClick:(UIButton *)sender {
+    XFLogFunc
+    //XFSeeBigViewController *bigView = [[XFSeeBigViewController alloc] init];
+    //bigView.model = self.model;
+    //[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:bigView animated:YES completion:nil];
+    
 }
 
 @end

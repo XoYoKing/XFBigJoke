@@ -7,6 +7,7 @@
 //
 
 #import "XFWordCell.h"
+#import "XFSeeBigViewController.h"
 
 
 @interface XFWordCell ()
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *caiButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
+
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgViewHeightCons;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgViewWidthCons;
@@ -32,8 +34,13 @@
 #pragma mark - 初始化
 
 - (void)awakeFromNib {
+    self.userInteractionEnabled = YES;
     self.backgroundColor = [UIColor whiteColor];
     self.contentWidthCons.constant = SCREEN.width - 2 * kMargin;
+    
+    self.imageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(seeBigBtnClick:)];
+    [self.imageView addGestureRecognizer:tapGR];
 }
 
 - (void)setModel:(XFDataModel *)model {
@@ -47,10 +54,20 @@
     
     if (model.url.length) {
         self.imgView.hidden = NO;
+        self.seeBigBtn.hidden = NO;
         self.imgViewHeightCons.constant = SCREEN.width;
         [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.url]];
     }
 }
+
+- (IBAction)seeBigBtnClick:(UIButton *)sender {
+    XFLogFunc
+    //XFSeeBigViewController *bigView = [[XFSeeBigViewController alloc] init];
+    //bigView.model = self.model;
+    //[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:bigView animated:YES completion:nil];
+    
+}
+
 
 - (IBAction)dingClick:(UIButton *)sender {
     UIViewController *vc = [UIApplication sharedApplication].keyWindow.rootViewController;

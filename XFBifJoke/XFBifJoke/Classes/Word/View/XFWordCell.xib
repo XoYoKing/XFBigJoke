@@ -100,29 +100,38 @@
                             <constraint firstAttribute="height" constant="300" id="ORt-66-dAi"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IK1-2h-nvb" userLabel="查看大图">
+                        <rect key="frame" x="8" y="303" width="322" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43" id="aIF-3w-tcv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <state key="normal" title="点击查看全图" image="see-big-picture" backgroundImage="see-big-picture-background"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="PTr-hB-Tz7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="0jj-No-kmY"/>
+                    <constraint firstItem="kIj-XP-UDQ" firstAttribute="top" secondItem="IK1-2h-nvb" secondAttribute="bottom" constant="8" id="8C2-iW-hc0"/>
+                    <constraint firstItem="kIj-XP-UDQ" firstAttribute="top" secondItem="IK1-2h-nvb" secondAttribute="bottom" constant="8" id="8NC-oJ-0Vw"/>
                     <constraint firstAttribute="trailingMargin" secondItem="PTr-hB-Tz7" secondAttribute="trailing" id="Avk-VM-JNW"/>
+                    <constraint firstItem="IK1-2h-nvb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DLQ-hd-Lpj"/>
                     <constraint firstAttribute="trailingMargin" secondItem="P8y-A5-q2b" secondAttribute="trailing" id="DXg-Ic-M1r"/>
                     <constraint firstItem="uIH-Rb-5vQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="FFw-vo-gXh"/>
                     <constraint firstItem="kIj-XP-UDQ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Ohh-8q-oMN"/>
                     <constraint firstItem="P8y-A5-q2b" firstAttribute="top" secondItem="uIH-Rb-5vQ" secondAttribute="bottom" constant="8" id="S4J-ph-UeH"/>
-                    <constraint firstItem="kIj-XP-UDQ" firstAttribute="top" secondItem="P8y-A5-q2b" secondAttribute="bottom" constant="10" id="gAR-R4-ad1"/>
                     <constraint firstAttribute="bottomMargin" secondItem="PTr-hB-Tz7" secondAttribute="bottom" id="gtK-qw-HZk"/>
                     <constraint firstItem="PTr-hB-Tz7" firstAttribute="top" secondItem="kIj-XP-UDQ" secondAttribute="bottom" constant="10" id="hDB-zm-eHT"/>
+                    <constraint firstItem="IK1-2h-nvb" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ias-Ex-UBT"/>
                     <constraint firstItem="uIH-Rb-5vQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="k5w-WS-E0R"/>
                     <constraint firstItem="kIj-XP-UDQ" firstAttribute="top" secondItem="P8y-A5-q2b" secondAttribute="bottom" priority="700" constant="10" id="lGL-Rl-65k"/>
                     <constraint firstItem="P8y-A5-q2b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="o4G-wt-jpr"/>
+                    <constraint firstItem="kIj-XP-UDQ" firstAttribute="top" secondItem="IK1-2h-nvb" secondAttribute="bottom" constant="8" id="ouk-68-rJi"/>
+                    <constraint firstAttribute="trailing" secondItem="IK1-2h-nvb" secondAttribute="trailing" constant="8" id="qpL-Oa-Xg2"/>
+                    <constraint firstItem="IK1-2h-nvb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="rF2-Ye-pmY"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="gAR-R4-ad1"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
@@ -131,6 +140,7 @@
                 <outlet property="contentWidthCons" destination="bt3-jf-gem" id="RLt-f1-aKR"/>
                 <outlet property="imgView" destination="P8y-A5-q2b" id="3O2-M4-cuN"/>
                 <outlet property="imgViewHeightCons" destination="ORt-66-dAi" id="H2P-cO-gYW"/>
+                <outlet property="seeBigBtn" destination="IK1-2h-nvb" id="xjn-GW-ZiR"/>
                 <outlet property="timeLabel" destination="kIj-XP-UDQ" id="ey5-cj-lwJ"/>
                 <outlet property="zanButton" destination="aUB-DG-60U" id="74H-Ap-etB"/>
             </connections>
@@ -140,5 +150,7 @@
     <resources>
         <image name="cell-button-line" width="1" height="29"/>
         <image name="cell-content-line" width="299" height="1"/>
+        <image name="see-big-picture" width="19" height="19"/>
+        <image name="see-big-picture-background" width="285" height="43"/>
     </resources>
 </document>

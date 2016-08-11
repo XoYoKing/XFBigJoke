@@ -17,4 +17,6 @@
 /** cell 高度 */
 @property (nonatomic, assign) CGFloat  cellHeight;
 
+@property (weak, nonatomic) IBOutlet UIButton *seeBigBtn;
+
 @end
