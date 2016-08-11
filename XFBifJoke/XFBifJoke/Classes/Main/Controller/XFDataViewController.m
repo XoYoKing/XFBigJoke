@@ -14,6 +14,7 @@
 
 @property (nonatomic, assign) NSInteger page;
 
+
 @end
 
 static NSString * const XFWordCellID = @"XFWordCell";
@@ -56,6 +57,9 @@ static NSInteger const pageSize = 15;
     self.view.backgroundColor = XFBaseBgColor;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    //self.tableView.rowHeight = UITableViewAutomaticDimension;
+    //self.tableView.estimatedRowHeight = 200;
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XFWordCell class]) bundle:nil] forCellReuseIdentifier:XFWordCellID];
     

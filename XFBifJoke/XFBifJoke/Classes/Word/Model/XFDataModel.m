@@ -15,10 +15,10 @@
     if (_cellHeight) return _cellHeight;
     
     // 文字内容
-    CGFloat textMaxW = SCREEN.width - 2 * 10;
+    CGFloat textMaxW = SCREEN.width - 2 * kMargin;
     CGSize textMaxSize = CGSizeMake(textMaxW, MAXFLOAT);
     CGSize textSize = [self.content boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} context:nil].size;
-    _cellHeight = textSize.height + 10;
+    _cellHeight = textSize.height;
     
     // 图片
     if (self.url.length) {

@@ -18,6 +18,13 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgViewHeightCons;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgViewWidthCons;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentWidthCons;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeightCons;
+
+@property (nonatomic, assign) CGSize imgViewSize;
+
 @end
 
 @implementation XFWordCell
@@ -26,6 +33,7 @@
 
 - (void)awakeFromNib {
     self.backgroundColor = [UIColor whiteColor];
+    self.contentWidthCons.constant = SCREEN.width - 2 * kMargin;
 }
 
 - (void)setModel:(XFDataModel *)model {
@@ -39,9 +47,9 @@
     
     if (model.url.length) {
         self.imgView.hidden = NO;
+        self.imgViewHeightCons.constant = SCREEN.width;
         [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.url]];
     }
-    
 }
 
 - (IBAction)dingClick:(UIButton *)sender {

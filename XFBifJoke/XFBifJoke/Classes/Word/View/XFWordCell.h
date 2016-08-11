@@ -14,4 +14,7 @@
 
 @property (nonatomic, strong) XFDataModel *model;
 
+/** cell 高度 */
+@property (nonatomic, assign) CGFloat  cellHeight;
+
 @end
