@@ -87,7 +87,7 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P8y-A5-q2b" userLabel="趣图">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P8y-A5-q2b" userLabel="趣图">
                         <rect key="frame" x="8" y="51" width="310" height="281"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </imageView>
@@ -115,7 +115,7 @@
                 <outlet property="timeLabel" destination="kIj-XP-UDQ" id="ey5-cj-lwJ"/>
                 <outlet property="zanButton" destination="aUB-DG-60U" id="74H-Ap-etB"/>
             </connections>
-            <point key="canvasLocation" x="661" y="434.5"/>
+            <point key="canvasLocation" x="805" y="441.5"/>
         </tableViewCell>
     </objects>
     <resources>
