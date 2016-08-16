@@ -54,7 +54,7 @@
     
     if (model.url.length) {
         self.imgView.hidden = NO;
-        self.seeBigBtn.hidden = NO;
+        //self.seeBigBtn.hidden = NO;
         self.imgViewHeightCons.constant = SCREEN.width;
         [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.url]];
     }

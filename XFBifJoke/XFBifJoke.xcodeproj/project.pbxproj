@@ -19,6 +19,7 @@
 		BD60B0C01D59AF620089939C /* XFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0BE1D59AF620089939C /* XFRefreshHeader.m */; };
 		BD60B0DC1D59D0750089939C /* UIView+XFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0DB1D59D0750089939C /* UIView+XFExtension.m */; };
 		BD60B0DF1D59D3950089939C /* XFDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD60B0DE1D59D3950089939C /* XFDataViewController.m */; };
+		BD6F931A1D62EF48000BE126 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6F93191D62EF48000BE126 /* Launch Screen.storyboard */; };
 		BDB04CB61D58C1CD00212CC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB04CB51D58C1CD00212CC2 /* main.m */; };
 		BDB04CB91D58C1CD00212CC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB04CB81D58C1CD00212CC2 /* AppDelegate.m */; };
 		BDB04CC11D58C1CD00212CC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB04CC01D58C1CD00212CC2 /* Assets.xcassets */; };
@@ -28,6 +29,8 @@
 		BDB04CFF1D58D4DE00212CC2 /* XFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB04CFE1D58D4DE00212CC2 /* XFNavigationController.m */; };
 		BDB04D081D58D6A600212CC2 /* XFWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB04D071D58D6A600212CC2 /* XFWordViewController.m */; };
 		BDB04D0B1D58D6B100212CC2 /* XFPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB04D0A1D58D6B100212CC2 /* XFPicViewController.m */; };
+		BDF46BA11D5CD8B0003F2D75 /* XFSeeBigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF46B9F1D5CD8B0003F2D75 /* XFSeeBigViewController.m */; };
+		BDF46BA21D5CD8B0003F2D75 /* XFSeeBigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF46BA01D5CD8B0003F2D75 /* XFSeeBigViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,7 @@
 		BD60B0DB1D59D0750089939C /* UIView+XFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XFExtension.m"; sourceTree = "<group>"; };
 		BD60B0DD1D59D3950089939C /* XFDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFDataViewController.h; sourceTree = "<group>"; };
 		BD60B0DE1D59D3950089939C /* XFDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFDataViewController.m; sourceTree = "<group>"; };
+		BD6F93191D62EF48000BE126 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BDB04CB11D58C1CD00212CC2 /* XFBifJoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XFBifJoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB04CB51D58C1CD00212CC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BDB04CB71D58C1CD00212CC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -92,6 +96,9 @@
 		BDB04D071D58D6A600212CC2 /* XFWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFWordViewController.m; sourceTree = "<group>"; };
 		BDB04D091D58D6B100212CC2 /* XFPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPicViewController.h; sourceTree = "<group>"; };
 		BDB04D0A1D58D6B100212CC2 /* XFPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPicViewController.m; sourceTree = "<group>"; };
+		BDF46B9E1D5CD8AF003F2D75 /* XFSeeBigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFSeeBigViewController.h; sourceTree = "<group>"; };
+		BDF46B9F1D5CD8B0003F2D75 /* XFSeeBigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFSeeBigViewController.m; sourceTree = "<group>"; };
+		BDF46BA01D5CD8B0003F2D75 /* XFSeeBigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFSeeBigViewController.xib; sourceTree = "<group>"; };
 		BF7AB1B54F5A84620C90E61B /* Pods-XFBifJokeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XFBifJokeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XFBifJokeUITests/Pods-XFBifJokeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD7DAA164E3016F8A02DD66E /* Pods-XFBifJoke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XFBifJoke.release.xcconfig"; path = "Pods/Target Support Files/Pods-XFBifJoke/Pods-XFBifJoke.release.xcconfig"; sourceTree = "<group>"; };
 		D063E4F3F4F22B55C3E83693 /* Pods-XFBifJokeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XFBifJokeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XFBifJokeTests/Pods-XFBifJokeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +212,7 @@
 				BDB04CC01D58C1CD00212CC2 /* Assets.xcassets */,
 				BDB04CC51D58C1CD00212CC2 /* Info.plist */,
 				BDB04CB51D58C1CD00212CC2 /* main.m */,
+				BD6F93191D62EF48000BE126 /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -338,6 +346,9 @@
 				BDB04CFE1D58D4DE00212CC2 /* XFNavigationController.m */,
 				BD60B0DD1D59D3950089939C /* XFDataViewController.h */,
 				BD60B0DE1D59D3950089939C /* XFDataViewController.m */,
+				BDF46B9E1D5CD8AF003F2D75 /* XFSeeBigViewController.h */,
+				BDF46B9F1D5CD8B0003F2D75 /* XFSeeBigViewController.m */,
+				BDF46BA01D5CD8B0003F2D75 /* XFSeeBigViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -469,7 +480,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDF46BA21D5CD8B0003F2D75 /* XFSeeBigViewController.xib in Resources */,
 				BDB04CC11D58C1CD00212CC2 /* Assets.xcassets in Resources */,
+				BD6F931A1D62EF48000BE126 /* Launch Screen.storyboard in Resources */,
 				BD60B0B71D5989890089939C /* XFWordCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,6 +649,7 @@
 				BDB04CB91D58C1CD00212CC2 /* AppDelegate.m in Sources */,
 				BDB04CFB1D58C3EA00212CC2 /* XFMainViewController.m in Sources */,
 				BD60B0AE1D5970590089939C /* XFHttpManager.m in Sources */,
+				BDF46BA11D5CD8B0003F2D75 /* XFSeeBigViewController.m in Sources */,
 				BD60B0B21D5985F30089939C /* XFDataModel.m in Sources */,
 				BDB04CB61D58C1CD00212CC2 /* main.m in Sources */,
 				BDB04D0B1D58D6B100212CC2 /* XFPicViewController.m in Sources */,
@@ -767,13 +781,14 @@
 			baseConfigurationReference = 928D00102CFAC06A62C81066 /* Pods-XFBifJoke.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: zhang yankun (V5T362FM3J)";
 				GCC_PREFIX_HEADER = XFBifJoke/PrefixHeader.pch;
 				INFOPLIST_FILE = XFBifJoke/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvxiaofan.XFBifJoke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ae912ada-ae25-4eb3-8e5e-0e76681162b0";
 			};
 			name = Debug;
 		};
@@ -782,13 +797,14 @@
 			baseConfigurationReference = CD7DAA164E3016F8A02DD66E /* Pods-XFBifJoke.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: zhang yankun (V5T362FM3J)";
 				GCC_PREFIX_HEADER = XFBifJoke/PrefixHeader.pch;
 				INFOPLIST_FILE = XFBifJoke/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvxiaofan.XFBifJoke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ae912ada-ae25-4eb3-8e5e-0e76681162b0";
 			};
 			name = Release;
 		};
