@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title =  @"趣图满屏飞";
     self.url = kURL_Pic;
 }
 

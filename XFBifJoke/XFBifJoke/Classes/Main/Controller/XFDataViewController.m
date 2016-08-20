@@ -39,21 +39,19 @@ static NSInteger const pageSize = 15;
     return _page;
 }
 
-
 #pragma mark - 初始化
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupView];
     
     [self setupRefresh];
     
-    //[self loadData];
+    [self setupView];
+    
 }
 
 - (void)setupView {
-    self.navigationItem.title = @"段子一箩筐";
     self.view.backgroundColor = XFBaseBgColor;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
