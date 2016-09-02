@@ -37,7 +37,7 @@
                 <constraint firstItem="T67-FK-He3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="UBv-Kp-VSJ"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="412.5" y="389.5"/>
+            <point key="canvasLocation" x="86.5" y="-158.5"/>
         </view>
     </objects>
     <resources>

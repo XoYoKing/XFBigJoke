@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *caiButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
+//@property (weak, nonatomic) IBOutlet UIView *progressView;
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgViewHeightCons;
@@ -26,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeightCons;
 
 @property (nonatomic, assign) CGSize imgViewSize;
+
 
 @end
 
@@ -54,9 +56,8 @@
     
     if (model.url.length) {
         self.imgView.hidden = NO;
-        //self.seeBigBtn.hidden = NO;
         self.imgViewHeightCons.constant = SCREEN.width;
-        [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.url]];
+        [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:[UIImage imageNamed:@"place"]];
     }
 }
 
