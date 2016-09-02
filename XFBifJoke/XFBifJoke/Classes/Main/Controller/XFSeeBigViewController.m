@@ -59,12 +59,12 @@
                 
                 self.imgViewSize = [self calculatePicViewSize:dataModel];
                 
-                self.imageView.xf_x = kMargin;
+                self.imageView.xf_centerX = self.view.xf_centerX - self.imgViewSize.width / 2;
                 
                 if (self.imgViewSize.height >= SCREEN.height) {
                     self.imageView.xf_y = kMargin;
                 } else {
-                    self.imageView.xf_centerY = self.view.xf_centerY;
+                    self.imageView.xf_centerY = self.view.xf_centerY - self.imgViewSize.height / 2;
                 }
                 
                 self.imageView.xf_width = self.imgViewSize.width;
@@ -96,6 +96,9 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)moreClick:(UIButton *)sender {
+    XFLogFunc
+}
 
 @end
 

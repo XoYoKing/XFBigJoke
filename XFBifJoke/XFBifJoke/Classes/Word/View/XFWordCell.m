@@ -36,13 +36,12 @@
 #pragma mark - 初始化
 
 - (void)awakeFromNib {
-    self.userInteractionEnabled = YES;
-    self.backgroundColor = [UIColor whiteColor];
+    self.contentView.userInteractionEnabled = YES;
+    self.contentView.backgroundColor = [UIColor whiteColor];
     self.contentWidthCons.constant = SCREEN.width - 2 * kMargin;
     
-    self.imageView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(seeBigBtnClick:)];
-    [self.imageView addGestureRecognizer:tapGR];
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(seeBigView:)];
+    [self.imgView addGestureRecognizer:tapGR];
 }
 
 - (void)setModel:(XFDataModel *)model {
@@ -59,6 +58,13 @@
         self.imgViewHeightCons.constant = SCREEN.width;
         [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:[UIImage imageNamed:@"place"]];
     }
+}
+
+- (void)seeBigView:(UIButton *)button {
+    
+    XFSeeBigViewController *bigView = [[XFSeeBigViewController alloc] init];
+    bigView.model = self.model;
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:bigView animated:YES completion:nil];
 }
 
 - (IBAction)seeBigBtnClick:(UIButton *)sender {
